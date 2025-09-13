@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -13,42 +14,70 @@
     <div class="container">
         <header>
             <div class="logo">
-                <img src="logo.png" alt="Logo">
-                <button>Products</button>
+                <img src="img/logo.png" alt="Logo">
             </div>
 
             <div class="head-right">
-                <p><a href="#">NEXUS</a></p>
-                <p><a href="#">VAULT</a></p>
-                <p><a href="#">ABOUT</a></p>
-                <p><a href="#">SERVICES</a></p>
-                <p><a href="#">CONTACT</a></p>
+                <a href="#">XTND LAB</a>
+                <a href="#">PROYECTOS</a>
+                <a href="#">SERVICIOS</a>
+                <a href="#">CONTACTO</a>
             </div>
         </header>
 
         <section class="hero-section autoBlur">
             <div class="hero-div">
-                <video loop autoplay muted playsinline class="hero-video">
-                    <source src="hero-video.mp4" type="video/mp4">
+                <video loop autoplay muted playsinline webkit-playsinline class="hero-video">
+                    <source src="videos/hero-4.mp4" type="video/mp4">
                 </video>
 
                 <div class="hero-info">
-                    <h1>REDEFINE</h1>
-                    <P>Enter the metagame Layer Unleash the Play Economy</P>
-                    <button>Watch Trailer</button>
+                    <h1>LABORATORIO</h1>
+                    <P>Conocé en qué estamos trabajando</P>
+                    <button>Ver proyecto</button>
                 </div>
 
-                <h1 class="gaming-text">GAMING</h1>
-                <div class="next-btn">
-                    NEXT
-                </div>
+                <h1 class="gaming-text">MULTIMEDIA</h1>
             </div>
         </section>        
 
+        <section id="xtnd-lab" class="xtnd-lab">
+            <p>Nuestros valores</p>
+            <div class="autoBlur">
+                <h1>ESTO SOMOS</h1>
+            </div>
+
+            <div class="scroll-text line1">
+                <div class="inner">
+                <span>Innovación significativa</span>
+                <span>Diseño centrado en las personas</span>
+                <span>Curiosidad y aprendizaje constante</span>
+                <span>Empatía e inclusión</span>
+                <span>Compromiso y responsabilidad social</span>
+                <span>Transparencia</span>
+                <span>Trabajo interdisciplinario</span>
+                <span>Co-creación</span>
+                </div>
+            </div>
+
+            <div class="scroll-text line2">
+                <div class="inner">
+                <span>Compromiso y responsabilidad social</span>
+                <span>Transparencia</span>
+                <span>Trabajo interdisciplinario</span>
+                <span>Co-creación</span>
+                <span>Innovación significativa</span>
+                <span>Diseño centrado en las personas</span>
+                <span>Curiosidad y aprendizaje constante</span>
+                <span>Empatía e inclusión</span>
+                </div>
+            </div>
+        </section>
+
         <section id="about" class="about-section">
-                <p>Welcome</p>
+                <p>Nuestros proyectos</p>
                 <div class="autoBlur">
-                    <h1>DISCOVER THIS WORLD</h1>
+                    <h1>ESTO ES LO QUE HACEMOS</h1>
                 </div>
                 <img class="stones-img" src="img/stones.webp" alt="stones-img">
                 <div class="image-box autoTakeFull">
@@ -67,7 +96,9 @@
                     <h1>RADIANT</h1>
                     <p>The first AAA game on the NEXUS Play Economy Platform</p>
 
-                    <video src="videos/feature-1.mp4" autoplay muted loop playsinline></video>
+                    <video autoplay muted loop webkit-playsinline playsinline>
+                        <source src="videos/feature-1.mp4" type="video/mp4">
+                    </video>
                     <button>Learn More</button>
                 </div>
 
@@ -116,11 +147,12 @@
         </section>
 
         <footer>
-            <p>© 2024 My Web Page. All rights reserved.</p>
+            <p>© 2025 XTND LAB. All rights reserved.</p>
             <ul>
-                <li><a href="#"><i class='bxl  bx-instagram'></i></a></li>
-                <li><a href="#"><i class='bxl  bx-linkedin'></i></a></li>
-                <li><a href="#"></a><i class='bxl  bx-tiktok'></i></a></li>
+                <li><a href="#" aria-label="Instagram"><i class='bxl bx-instagram'></i></a></li>
+                <li><a href="#" aria-label="LinkedIn"><i class='bxl bx-linkedin'></i></a></li>
+                <li><a href="#" aria-label="TikTok"><i class='bxl bx-tiktok'></i></a></li>
+
             </ul>
             <p>Privacy Policy | Terms of Service</p>
         </footer>

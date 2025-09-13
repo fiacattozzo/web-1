@@ -15,17 +15,27 @@ body{
 }
 
 header{
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
+    position: fixed;                  
+    top: 20px;                        
+    left: 50%;                        
+    transform: translateX(-50%);      
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 40px;
-    z-index: 999;
-    background-color: #4b4b4b5b;
-    background-filter: blur(10px);
+    width: 80%;
+    border-radius: 50px;              
+    background: rgba(0, 0, 0, 0.4);   
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    z-index: 1000;                    
+    max-width: 1200px;                
+}
+
+.logo img{
+    height: 50px;
+    width: auto;
+    display: block;
 }
 
 .head-left{
@@ -52,11 +62,50 @@ header{
     opacity: 0.7;
 }
 
+.head-right{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.head-right p{
+    margin: 0;
+}
+
 .head-right a{
+    font-family: 'Space Grotesk', sans-serif;
+    position: relative;
     text-decoration: none;
-    padding-left: 25px;
     color: white;
     font-size: 15px;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.head-right a:hover{
+    color: #edff66;
+}
+
+.head-right a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #edff66;
+    transition: width 0.3s ease;
+}
+
+.head-right a:hover::after{
+    width: 100%;
+}
+
+.head-right a:active{
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
 }
 
 .hero-section{
@@ -73,9 +122,13 @@ header{
 }
 
 .hero-video{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: -1; /* lo manda detrás del texto */
 }
 
 .hero-info{
@@ -101,7 +154,6 @@ header{
 
 .hero-info button{
     background-color: #edff66;
-    border: 2px solid "edff66";
     padding: 10px 40px;
     border-radius: 20px;
     cursor: pointer;
@@ -112,7 +164,48 @@ header{
 .hero-info button:hover{
     background-color: transparent;
     color: white;
-    box-shadow: 0 0 15px #edff66;
+}
+
+.xtnd-lab p {
+    font-size: 12px;
+    font-family: 'Space Grotesk', sans-serif; /* igual que el resto */
+    text-transform: uppercase; 
+    letter-spacing: 2px;       
+    color: gray;               
+    margin: 0;                
+    text-align: center;        
+}
+
+.scroll-text {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.scroll-text .inner {
+    display: inline-block;
+    animation: scroll 25s linear infinite;
+    animation-delay: 0s;
+}
+
+.scroll-text span {
+    font-family: 'Space Grotesk', sans-serif;
+    display: inline-block;
+    margin: 0 25px;
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+}
+
+.line2 .inner {
+    animation-direction: reverse; 
+    animation-delay: 0s;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 
 .gaming-text{
@@ -122,33 +215,6 @@ header{
     position: absolute;
     right: 20px;
     bottom: 30px;
-}
-
-.next-btn{
-    width: 200px;
-    height: 200px;
-    background-color: #edff66;
-    position: absolute;
-    left: 45%;
-    bottom: 45%;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 100;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.next-btn:hover{
-    width: 200px;
-    height: 200px;
-    opacity: 1;
-    box-shadow: 0 0 15px white;
 }
 
 .about-section{
@@ -179,6 +245,12 @@ header{
 
 .about-section p{
     font-size: 12px;
+    font-family: 'Space Grotesk', sans-serif; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;       
+    color: gray;               
+    margin: 0;                 
+    text-align: center;        
 }
 
 .about-section h1{
@@ -191,8 +263,8 @@ header{
     text-transform: uppercase;
     background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #2a46ff, #0099ff);
     background-size: 200%;
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animate-gradient 2.5s linear infinite;
 }
@@ -264,8 +336,8 @@ header{
     z-index: 1;
     background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #2a46ff, #0099ff);
     background-size: 200%;
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animate-gradient 2.5s linear infinite;
     max-width: 250px;
@@ -364,8 +436,8 @@ header{
     text-align: center;
     background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #2a46ff, #0099ff);
     background-size: 200%;
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animate-gradient 2.5s linear infinite;
     max-width: 250px;
@@ -393,7 +465,8 @@ header{
     align-items: center;
     justify-content: space-between;
     background-color: lightgray;
-    background-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari */
+    backdrop-filter: blur(10px);         /* Estándar */
     height: 100px;
 }
 
