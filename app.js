@@ -1,16 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const items = document.querySelectorAll('.service-item');
-  const previewImg = document.getElementById('service-preview-img');
+document.addEventListener("DOMContentLoaded", () => {
+  const previewBox = document.getElementById("service-preview-multi");
+  const items = document.querySelectorAll(".service-item");
 
   items.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      const imgsrc = item.getAttribute('data-preview');
-      previewImg.src = imgsrc;
-      previewImg.style.opacity = '1';
+    item.addEventListener("mouseenter", () => {
+      // Limpio previews anteriores
+      previewBox.innerHTML = "";
+
+      // Tomo las rutas desde el atributo data-previews
+      const imgs = item.getAttribute("data-previews").split(",");
+      
+      imgs.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src.trim();
+        previewBox.appendChild(img);
+      });
+
+      // muestro el bloque
+      previewBox.style.opacity = "1";
     });
 
-    item.addEventListener('mouseleave', () => {
-      previewImg.style.opacity = '0';
+    item.addEventListener("mouseleave", () => {
+      previewBox.style.opacity = "0";
+      previewBox.innerHTML = "";
     });
   });
 });
